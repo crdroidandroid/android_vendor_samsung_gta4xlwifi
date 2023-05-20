@@ -42,6 +42,10 @@ service cpboot-daemon /vendor/bin/cbd -d -tss310 -bm -mm -P by-name/radio
     user root
     group radio cache inet misc audio sdcard_rw log sdcard_r shell system
 
+# disable cbd service in case of WiFI projects.
+on property:ro.radio.noril=yes
+    stop cpboot-daemon
+
 on property:ro.vendor.multisim.simslotcount=*
    write /sys/module/modem_ctrl_ss310ap/parameters/ds_detect ${ro.vendor.multisim.simslotcount}
 

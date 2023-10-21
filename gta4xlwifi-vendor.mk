@@ -24,7 +24,6 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libexynoscamera3 \
-    audio.primary.exynos9611 \
     libswdap \
     android.hardware.gnss@2.0-impl \
     gps.default \
